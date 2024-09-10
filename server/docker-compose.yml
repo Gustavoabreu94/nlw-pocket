@@ -6,6 +6,12 @@ services:
     ports:
       - '5432:5432'
     environment:
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=docker
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=inorbit
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
