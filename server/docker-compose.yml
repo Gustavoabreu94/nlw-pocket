@@ -1,17 +1,10 @@
-name: pocket-js-server
-
 services:
   pg:
+    container_name: pocket-js-server-pg
     image: bitnami/postgresql:13.16.0
     ports:
-      - '5432:5432'
+      - "5432:5432"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=inorbit
-    networks:
-      - my-network
-
-networks:
-  my-network:
-    driver: bridge
